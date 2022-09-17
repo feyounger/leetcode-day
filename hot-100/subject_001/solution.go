@@ -1,5 +1,8 @@
 package subject_001
 
+/**
+1. 两数之和
+*/
 func twoSum01(array []int, target int) []int {
 	var result []int
 	for i, v1 := range array {
