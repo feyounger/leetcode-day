@@ -1,4 +1,4 @@
-package subject_23
+package subject_876
 
 import (
 	"fmt"
