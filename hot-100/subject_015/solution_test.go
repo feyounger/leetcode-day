@@ -7,7 +7,7 @@ import (
 
 func TestExecInstance01(t *testing.T) {
 	nums := []int{-1, 0, 1, 2, -1, -4}
-	fmt.Println(execInstance(nums))
+	fmt.Println(threeSum02(nums))
 }
 
 func TestExecInstance02(t *testing.T) {

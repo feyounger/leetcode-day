@@ -55,19 +55,37 @@ func action(nums []int, left, right, mid int, result *[][]int) bool {
 
 func threeSum02(nums []int) [][]int {
 	var result [][]int
-	var temp int
-	if len(nums) < 3 {
-		return nil
-	}
+	// 排序
 	sort.Ints(nums)
-	for i := 0; i < len(nums); i++ {
-		for j := i + 1; j < len(nums); j++ {
-			temp = nums[i] + nums[j]
-			for k := j + 1; k < len(nums); k++ {
-				if -temp == nums[k] {
-					result = append(result, []int{nums[i], nums[j], nums[k]})
-					break
+	for i := 0; i < len(nums)-2; i++ {
+		// i大于0后直接结束
+		if nums[i] > 0 {
+			return result
+		}
+		// 给i去重,
+		if i > 0 && nums[i] == nums[i-1] {
+			continue
+		}
+		left := i + 1
+		right := len(nums) - 1
+		//左右两个指针 若sum大于0移动right，否则移动left
+		for left < right {
+			num2 := nums[left]
+			num3 := nums[right]
+			sum := nums[i] + nums[left] + nums[right]
+			if sum == 0 {
+				result = append(result, []int{nums[i], nums[left], nums[right]})
+				// 对left和right去重
+				for left < right && nums[left] == num2 {
+					left++
 				}
+				for left < right && nums[right] == num3 {
+					right--
+				}
+			} else if sum > 0 {
+				right--
+			} else {
+				left++
 			}
 		}
 	}
