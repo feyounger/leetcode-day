@@ -6,7 +6,7 @@ import (
 )
 
 func TestExecInstance01(t *testing.T) {
-	fmt.Println(execInstance("abcabcbb"))
+	fmt.Println(lengthOfLongestSubstring01("cdd"))
 }
 
 func TestExecInstance02(t *testing.T) {

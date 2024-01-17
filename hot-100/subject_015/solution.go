@@ -1,10 +1,46 @@
 package subject_015
 
-import "sort"
+import (
+	"math"
+	"sort"
+)
 
 /**
 15. 三数之和
 */
+
+func threeSum03(nums []int) [][]int {
+	var result [][]int
+	var j, k, tmp int
+	tmp = -1
+	sort.Ints(nums)
+	j = len(nums) - 1
+	k = j - 1
+	for i := 0; i < j; {
+		if k == i {
+			i++
+			k = j - 1
+			continue
+		}
+		if nums[j] == tmp {
+			j--
+			k = j - 1
+			continue
+		}
+		first := math.Abs(float64(nums[i]))
+		if nums[j]+nums[k] == int(first) {
+			result = append(result, []int{nums[i], nums[k], nums[j]})
+			tmp = nums[j]
+			j--
+			k = j - 1
+		} else if nums[j]+nums[k] > int(first) {
+			k--
+		} else {
+			i++
+		}
+	}
+	return result
+}
 
 func threeSum01(nums []int) [][]int {
 	var result [][]int
