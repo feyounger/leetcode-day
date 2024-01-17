@@ -6,8 +6,8 @@ import (
 )
 
 func TestExecInstance01(t *testing.T) {
-	nums := []int{-4, -3, -2, -1, -1, 0, 0, 1, 2, 3, 4}
-	fmt.Println(threeSum03(nums))
+	nums := []int{-1, 0, 1, 2, -1, -4}
+	fmt.Println(threeSum02(nums))
 }
 
 func TestExecInstance02(t *testing.T) {
