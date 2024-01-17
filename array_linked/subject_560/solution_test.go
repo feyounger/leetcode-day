@@ -8,5 +8,5 @@ import (
 func TestSubarraySum(t *testing.T) {
 	//fmt.Println(subarraySum([]int{1, 1, 1}, 2))
 	//fmt.Println(subarraySum([]int{1, 2, 3}, 3))
-	fmt.Println(subarraySum([]int{1, -1, 0}, 0))
+	fmt.Println(subarraySum1([]int{1, 1, 1}, 2))
 }
