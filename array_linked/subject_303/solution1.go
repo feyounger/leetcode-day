@@ -14,12 +14,10 @@ type NumArray struct {
 
 func Constructor(nums []int) NumArray {
 	sumArray := make([]int, len(nums)+1)
-	for i := 1; i < len(nums)+1; i++ {
+	for i := 1; i < len(sumArray); i++ {
 		sumArray[i] = sumArray[i-1] + nums[i-1]
 	}
-	return NumArray{
-		SumArray: sumArray,
-	}
+	return NumArray{sumArray}
 }
 
 func (this *NumArray) SumRange(left int, right int) int {

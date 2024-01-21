@@ -6,6 +6,10 @@ type ListNode struct {
 }
 
 func mergeKLists(lists []*ListNode) *ListNode {
+	result := &ListNode{}
+	if len(lists) == 0 {
+		return nil
+	}
 
-	return nil
+	return result
 }
