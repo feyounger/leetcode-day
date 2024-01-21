@@ -1,18 +1,20 @@
 package subject_1109
 
-import "fmt"
-
 func corpFlightBookings(bookings [][]int, n int) []int {
-	array := make([]int, n+1)
-	for _, booking := range bookings {
-		array[booking[0]] += booking[2]
-		if booking[1]+1 < n+1 {
-			array[booking[1]+1] -= booking[2]
-		}
+	arr := make([]int, n+1)
+	//res := make([]int, n+1)
+	for i := range bookings {
+		corpFlight(arr, bookings[i][0], bookings[i][1], bookings[i][2])
 	}
-	fmt.Println(array)
-	for i := 1; i < len(array); i++ {
-		array[i] = array[i-1] + array[i]
+	for i := 1; i < len(arr); i++ {
+		arr[i] += arr[i-1]
 	}
-	return array[1:]
+	return arr[1:]
+}
+
+func corpFlight(arr []int, left, right, num int) {
+	arr[left] += num
+	if right+1 < len(arr) {
+		arr[right+1] -= num
+	}
 }
