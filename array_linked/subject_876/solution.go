@@ -11,6 +11,7 @@ func middleNode(head *ListNode) *ListNode {
 	for l2 != nil && l2.Next != nil {
 		l1 = l1.Next
 		l2 = l2.Next.Next
+
 	}
 	return l1
 }
