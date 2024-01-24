@@ -9,7 +9,9 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	dummy := &ListNode{
 		Next: head,
 	}
+	//找到 要删除节点的父节点(要对其进行操作)
 	target := findFromEnd(dummy, n+1)
+	//删除其节点
 	target.Next = target.Next.Next
 
 	return dummy.Next
