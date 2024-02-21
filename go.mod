@@ -1,3 +1,3 @@
 module leetcode-day
 
-go 1.17
+go 1.19
