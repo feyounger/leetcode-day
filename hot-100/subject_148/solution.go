@@ -7,7 +7,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func sortList1(head *ListNode) *ListNode {
+func sortList(head *ListNode) *ListNode {
 	var arr []int
 	sortHead := head
 	dummy := &ListNode{}

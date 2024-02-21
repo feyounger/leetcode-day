@@ -35,7 +35,7 @@ func (this *LRUCache) Put(key int, value int) {
 		for tmp != nil {
 			if oldValue == tmp.Val {
 				oldHead := dummy.Next
-
+				dummy.Next = &ListNode{Val: value, Next: oldHead.Next}
 			}
 			tmp = tmp.Next
 		}
